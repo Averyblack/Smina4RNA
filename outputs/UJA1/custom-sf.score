@@ -1,0 +1,47 @@
+#This is an example of an input that can be used to create and calibrate
+-2.79887  ad4_solvation(d-sigma=3.6,_s/q=0.01097,_c=8)  desolvation, q determines whether value is charge dependent
+3.73154  ad4_solvation(d-sigma=3.6,_s/q=0.01097,_c=8)  in all terms, c is a distance cutoff
+4.91837  electrostatic(i=1,_^=100,_c=8)	i is the exponent of the distance, see everything.h for details
+2.33610  electrostatic(i=2,_^=100,_c=8)
+0.02940  gauss(o=0,_w=0.5,_c=8)		o is offset, w is width of gaussian
+-2.82629  gauss(o=3,_w=2,_c=8)
+3.88908  gauss(o=1.5,_w=0.3,_c=8)
+-0.31665  gauss(o=2,_w=0.9,_c=8)
+3.68497  gauss(o=1,_w=0.9,_c=8)
+-2.40228  gauss(o=1,_w=0.5,_c=8)
+0.68906  gauss(o=1,_w=0.3,_c=8)
+-3.72586  gauss(o=1,_w=0.7,_c=8)
+2.66474  gauss(o=2,_w=0.5,_c=8)
+3.53112  gauss(o=2,_w=0.7,_c=8)
+0.42607  gauss(o=3,_w=0.9,_c=8)
+-2.68435  repulsion(o=0,_c=8)	o is offset of squared distance repulsion
+-3.51615  hydrophobic(g=0.5,_b=1.5,_c=8)		g is a good distance, b the bad distance
+-4.64770  hydrophobic(g=0.5,_b=1,_c=8)		g is a good distance, b the bad distance
+-0.00597  hydrophobic(g=0.5,_b=2,_c=8)		g is a good distance, b the bad distance
+-3.98317  hydrophobic(g=0.5,_b=3,_c=8)		g is a good distance, b the bad distance
+3.83347  non_hydrophobic(g=0.5,_b=1.5,_c=8)	value is linearly interpolated between g and b
+3.02098  vdw(i=4,_j=8,_s=0,_^=100,_c=8)	i and j are LJ exponents
+1.30954  vdw(i=6,_j=12,_s=1,_^=100,_c=8) s is the smoothing, ^ is the cap
+2.13539  non_dir_h_bond(g=-0.7,_b=0,_c=8)	good and bad
+3.68327  non_dir_h_bond(g=-0.7,_b=0.2,_c=8)	good and bad
+3.80746  non_dir_h_bond(g=-0.7,_b=0.5,_c=8)	good and bad
+2.51840  non_dir_h_bond(g=-1,_b=0,_c=8)	good and bad
+0.69181  non_dir_h_bond(g=-1,_b=0.2,_c=8)	good and bad
+-3.33889  non_dir_h_bond(g=-1,_b=0.5,_c=8)	good and bad
+-1.09068  non_dir_h_bond(g=-1.3,_b=0,_c=8)	good and bad
+3.24930  non_dir_h_bond(g=-1.3,_b=0.2,_c=8)	good and bad
+4.45405  non_dir_h_bond(g=-1.3,_b=0.5,_c=8)	good and bad
+3.10378  non_dir_anti_h_bond_quadratic(o=0.0,_c=8) 
+-2.49109  non_dir_anti_h_bond_quadratic(o=0.5,_c=8) 
+-2.78930  non_dir_anti_h_bond_quadratic(o=1.0,_c=8) 	
+-0.40752  non_dir_h_bond_lj(o=-0.7,_^=100,_c=8)	LJ 10-12 potential, capped at ^
+-0.49970  non_dir_h_bond_lj(o=-1,_^=100,_c=8)	LJ 10-12 potential, capped at ^
+1.15254  non_dir_h_bond_lj(o=-1.3,_^=100,_c=8)	LJ 10-12 potential, capped at ^
+2.06178  num_tors_div	div constant terms are not linearly independent
+3.24662  num_heavy_atoms_div	
+3.82702  num_heavy_atoms	these terms are just added
+-1.27833  num_tors_add
+0.22459  num_tors_sqr
+4.06043  num_tors_sqrt
+-4.41775  num_hydrophobic_atoms
+3.01130  ligand_length
