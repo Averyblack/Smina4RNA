@@ -44,19 +44,33 @@ The important values to prostprocess are in `return_*.txt` files.
 
 ## `B-looper.sh`
 
-Master script for handling the docking result files. It uses GNU-parallel to loop through the outpup files of the `B-single-docking.sh` and calculates mean for `return_*.txt` files uing `compute_mean.py` script.
+Master script for handling the docking result files. It uses GNU-parallel to loop through the output files of the `B-single-docking.sh` and calculates mean for `return_*.txt` files using `compute_mean.py` script.
 
-Parameters:
+### Parameters
 1. Directory of the data folders
 2. Direcotory for the output files
 
-# Prerequisites
+### Prerequisites
 1. GNU-parallel
 2. Numpy 
 3. Smina
 
-# How to run
+### How to run:
 
 In command line type:
 
 `./B-looper.sh ../data/sample_data/training ../outputs`
+
+## `compute_mean.py`
+
+Script for computing the mean of the performance values.
+
+### Parameters:
+`-p` - Directory of the files obtained via `B-single-docking.sh`
+
+### Output:
+
+Output files are save in th directory provided as the `-p` parameter.
+
+`return_*.txt` -  file containing the mean values of the adequate performance results  
+`return_*.png` - boxplots of the adequate performance results 
