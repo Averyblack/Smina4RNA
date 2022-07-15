@@ -1,20 +1,26 @@
 import os
 import argparse
 import numpy as np
-#from matplotlib.pyplot import plt
+import matplotlib.pyplot as plt
 
-#Function for calculating means for every output folder
+#Function for calculating means and plotting
 def calc_mean(p, result):
     num_list = []
-    for op_folder in os.listdir(p):
-        if ".txt" not in op_folder:
-            path = p+op_folder
-            for file  in os.listdir(path):
-                if file == result:
-                    print(float(open(path+"/"+file).readline()))
-                    num_list.append(float(open(path+"/"+file).readline()))
+    for root, dirs, files in os.walk(p):
+        for file in files:
+            if file == result and os.path.getsize(os.path.join(root, file)) != 0: # This should prevent null values from going into the results
+                    num_list.append(float(open(os.path.join(root, file)).readline()))
 
+    #creates a box plot
+    plt.figure(figsize = (10,7))
+    plt.boxplot(num_list)
+    name = result.split(".")[0]
+    plt.title(name)
+    plt.savefig(args['p']+name+".png")
+
+    #calculates mean
     mn = np.mean(num_list)
+
     #Save the means as the new files 
     mean_file = open(args['p']+result, "w")
     mean_file.write(str(mn))
